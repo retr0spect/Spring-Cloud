@@ -70,16 +70,11 @@ fabric.properties
 *.zip
 *.tar.gz
 *.rar
+*.iml
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
 .idea/
 .mvn/
-application-service/
-configuration-server/
-gs-multi-module.iml
-mvnw
-mvnw.cmd
-pom.xml
-spring-cloud-modules-parent.iml
+*/target
