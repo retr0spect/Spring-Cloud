@@ -1,9 +1,12 @@
 package hello.app.model;
 
 
+import java.util.List;
+
 public class User {
     String userName;
     String email;
+    List<Order> orders;
 
     public User() {
     }
@@ -29,4 +32,11 @@ public class User {
         this.email = email;
     }
 
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
 }

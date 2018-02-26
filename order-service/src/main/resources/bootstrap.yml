@@ -1,9 +1,9 @@
 spring:
   application:
-    name: application-service
+    name: order-service
   profiles:
     active:
       default
   cloud:
     config:
-      uri: http://localhost:8888
+      enabled: true

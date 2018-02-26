@@ -18,6 +18,12 @@ public class UserController {
         return user;
     }
 
+    @RequestMapping(value = "/{userName}/orders", method = RequestMethod.GET)
+    public User getUserByUserNameWithOrders(@PathVariable String userName) {
+        User user = userService.getUserByUserNameWithOrders(userName);
+        return user;
+    }
+
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);

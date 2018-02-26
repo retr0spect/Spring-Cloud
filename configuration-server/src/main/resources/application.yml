@@ -7,6 +7,8 @@ spring:
         encrypt.enabled: false
         git:
           uri: https://github.com/retr0spect/cloud-config-repo
-          search-paths: application-service
+          search-paths: user-service, order-service
           username:
           password:
+      discovery:
+        enabled: true

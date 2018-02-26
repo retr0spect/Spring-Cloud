@@ -9,7 +9,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>application-service</module>
+        <module>user-service</module>
+        <module>order-service</module>
+        <module>eureka-server</module>
         <module>configuration-server</module>
     </modules>
 
