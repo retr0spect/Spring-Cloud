@@ -24,6 +24,11 @@ public class OrderController {
         return orderService.getOrdersByUserName(userName);
     }
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public List<Order> getAllOrders() {
+        return orderService.getAllOrders();
+    }
+
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public Order createOrder(@RequestBody Order order) {
         return orderService.createOrder(order);

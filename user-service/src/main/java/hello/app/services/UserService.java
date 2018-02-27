@@ -32,4 +32,8 @@ public class UserService {
         user.setOrders(orders);
         return user;
     }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
 }
