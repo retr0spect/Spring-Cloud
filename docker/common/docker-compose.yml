@@ -11,6 +11,16 @@ services:
     environment:
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       EUREKASERVER_PORT: "8761"
+  zuulserver:
+    image: zuul-server:v1
+    ports:
+      - "5555:5555"
+    environment:
+      SERVER_PORT: "5555"
+      CONFIGSERVER_URI: "http://configserver:8888"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      EUREKASERVER_PORT:  "8761"
+      CONFIGSERVER_PORT:  "8888"
   userservice:
     image: user-service:v1
     ports:
@@ -21,13 +31,33 @@ services:
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       EUREKASERVER_PORT: "8761"
       CONFIGSERVER_PORT: "8888"
+  userservice2:
+      image: user-service:v1
+      ports:
+        - "8081:8081"
+      environment:
+        SERVER_PORT: "8081"
+        CONFIGSERVER_URI: "http://configserver:8888"
+        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+        EUREKASERVER_PORT: "8761"
+        CONFIGSERVER_PORT: "8888"
   orderservice:
     image: order-service:v1
     ports:
-      - "8081:8081"
+      - "8085:8085"
     environment:
-      SERVER_PORT: "8081"
+      SERVER_PORT: "8085"
       CONFIGSERVER_URI: "http://configserver:8888"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       EUREKASERVER_PORT: "8761"
       CONFIGSERVER_PORT: "8888"
+  orderservice2:
+      image: order-service:v1
+      ports:
+        - "8086:8086"
+      environment:
+        SERVER_PORT: "8086"
+        CONFIGSERVER_URI: "http://configserver:8888"
+        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+        EUREKASERVER_PORT: "8761"
+        CONFIGSERVER_PORT: "8888"

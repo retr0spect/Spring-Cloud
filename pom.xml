@@ -12,6 +12,7 @@
         <module>user-service</module>
         <module>order-service</module>
         <module>eureka-server</module>
+        <module>zuul-server</module>
         <module>configuration-server</module>
     </modules>
 
