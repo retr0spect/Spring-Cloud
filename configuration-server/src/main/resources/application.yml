@@ -7,7 +7,7 @@ spring:
         encrypt.enabled: false
         git:
           uri: https://github.com/retr0spect/cloud-config-repo
-          search-paths: user-service, order-service
+          search-paths: user-service, order-service, zuul-server
           username:
           password:
       discovery:

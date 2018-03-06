@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.retrospect</groupId>
-    <artifactId>config-server</artifactId>
+    <artifactId>configuration-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -41,7 +41,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <start-class>hello.app.ConfigurationServerApplication</start-class>
-        <docker.image.name>config-server</docker.image.name>
+        <docker.image.name>configuration-server</docker.image.name>
         <docker.image.tag>v1</docker.image.tag>
     </properties>
 

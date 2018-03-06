@@ -1,6 +1,6 @@
 package hello.app.services;
 
-import hello.app.clients.OrdersFeignClient;
+import hello.app.clients.OrganizationRestTemplateClient;
 import hello.app.model.Order;
 import hello.app.model.User;
 import hello.app.repository.UserRepository;
@@ -16,7 +16,7 @@ public class UserService {
     UserRepository userRepository;
 
     @Autowired
-    OrdersFeignClient ordersFeignClient;
+    OrganizationRestTemplateClient organizationRestTemplateClient;
 
     public User getUserByUserName(String userName) {
         return userRepository.findByUserName(userName);
@@ -28,7 +28,7 @@ public class UserService {
 
     public User getUserByUserNameWithOrders(String userName) {
         User user = userRepository.findByUserName(userName);
-        List<Order> orders = ordersFeignClient.getOrders(user.getUserName());
+        List<Order> orders = organizationRestTemplateClient.getOrders(user.getUserName());
         user.setOrders(orders);
         return user;
     }
