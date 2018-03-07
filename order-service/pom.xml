@@ -11,7 +11,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
+        <version>1.4.4.RELEASE</version>
         <relativePath/>
     </parent>
     <dependencyManagement>
@@ -19,7 +19,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Edgware.SR2</version>
+                <version>Camden.SR5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -29,7 +29,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <start-class>hello.app.OrderingApplication</start-class>
+        <start-class>com.retrospect.order.OrderingApplication</start-class>
         <docker.image.name>order-service</docker.image.name>
         <docker.image.tag>v1</docker.image.tag>
     </properties>
@@ -70,6 +70,14 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-rsa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-kafka</artifactId>
         </dependency>
     </dependencies>
 

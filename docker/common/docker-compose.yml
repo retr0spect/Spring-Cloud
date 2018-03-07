@@ -27,26 +27,17 @@ services:
       - "8080:8080"
     environment:
       PROFILE: "default"
-      SERVER_PORT: "8080"
+      SERVER_PORT: "8081"
       CONFIGSERVER_URI: "http://configserver:8888"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
+      KAFKASERVER_URI: "kafkaserver"
+      ZKSERVER_URI: "kafkaserver"
       EUREKASERVER_PORT: "8761"
       CONFIGSERVER_PORT: "8888"
       AUTHSERVER_PORT:   "8091"
-  userservice2:
-      image: user-service:v1
-      ports:
-        - "8081:8081"
-      environment:
-        PROFILE: "default"
-        SERVER_PORT: "8081"
-        CONFIGSERVER_URI: "http://configserver:8888"
-        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-        AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
-        EUREKASERVER_PORT: "8761"
-        CONFIGSERVER_PORT: "8888"
-        AUTHSERVER_PORT:   "8091"
+      KAFKASERVER_PORT:    "2181"
+      REDIS_PORT:          "6379"
   orderservice:
     image: order-service:v1
     ports:
@@ -56,9 +47,12 @@ services:
       CONFIGSERVER_URI: "http://configserver:8888"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
+      KAFKASERVER_URI: "kafkaserver"
+      ZKSERVER_URI: "kafkaserver"
       EUREKASERVER_PORT: "8761"
       CONFIGSERVER_PORT: "8888"
       AUTHSERVER_PORT:   "8091"
+      KAFKASERVER_PORT:    "2181"
   authenticationservice:
         image: authentication-service:v1
         ports:
@@ -69,3 +63,12 @@ services:
           EUREKASERVER_PORT: "8761"
           CONFIGSERVER_URI: "http://configserver:8888"
           EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+  redis:
+      image: redis:alpine
+      ports:
+        - 6379:6379
+  kafkaserver:
+      image: spotify/kafka
+      ports:
+        - 2181:2181
+        - 9092:9092

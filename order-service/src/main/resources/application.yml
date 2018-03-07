@@ -11,3 +11,15 @@ security:
   oauth2:
     resource:
        userInfoUri: http://localhost:8901/auth/user
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+            destination:  orderChangeTopic
+            content-type: application/json
+      kafka:
+        binder:
+          zkNodes: localhost
+          brokers: localhost
