@@ -3,10 +3,10 @@ package com.retrospect.order.utils;
 import org.springframework.http.HttpHeaders;
 
 public class UserContext {
-    public static final String CORRELATION_ID = "aditya-correlation-id";
-    public static final String AUTH_TOKEN     = "aditya-auth-token";
-    public static final String USER_ID        = "aditya-user-id";
-    public static final String ORG_ID         = "aditya-org-id";
+    public static final String CORRELATION_ID = "retrospect-correlation-id";
+    public static final String AUTH_TOKEN     = "retrospect-auth-token";
+    public static final String USER_ID        = "retrospect-user-id";
+    public static final String ORG_ID         = "retrospect-org-id";
 
     private static final ThreadLocal<String> correlationId= new ThreadLocal<String>();
     private static final ThreadLocal<String> authToken= new ThreadLocal<String>();

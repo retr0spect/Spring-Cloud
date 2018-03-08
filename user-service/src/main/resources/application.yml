@@ -24,3 +24,9 @@ spring:
         binder:
           zkNodes: localhost
           brokers: localhost
+
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.retrospect: DEBUG

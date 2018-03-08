@@ -72,3 +72,8 @@ services:
       ports:
         - 2181:2181
         - 9092:9092
+  logspout:
+      image: gliderlabs/logspout
+      command: syslog://logs4.papertrailapp.com:32233
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
